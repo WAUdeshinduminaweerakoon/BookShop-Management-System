@@ -96,6 +96,7 @@
     <Content Include="Global.asax" />
     <Content Include="View\Admin\Categories.aspx" />
     <Content Include="View\Admin\Dashboard.aspx" />
+    <Content Include="View\Admin\Login.aspx" />
     <Content Include="View\Admin\Products.aspx" />
     <Content Include="View\Admin\Sellers.aspx" />
     <Content Include="View\Seller\Billing.aspx" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="View\Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
