@@ -13,35 +13,38 @@
                 <h2>Seller Details</h2>
                 <%--<form runat="server">--%>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1">Seller Name</label>
-                    <input type="text" class="form-control" id="SellerName" placeholder="Seller Name">    
+                    <label for="SellerName">Seller Name</label>
+                    <input type="text" class="form-control" id="SellerName" placeholder="Seller Name" runat ="server">    
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1">Seller Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">    
+                    <label for="SellerEmail">Seller Email</label>
+                    <input type="email" class="form-control" id="SellerEmail" placeholder="Email" runat ="server">    
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1">Seller Password</label>
-                    <input type="password" class="form-control" id="SellerPassword" placeholder="">    
+                    <label for="SellerPassword">Seller Password</label>
+                    <input type="password" class="form-control" id="SellerPassword" placeholder="" runat ="server">    
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1">Seller Phone Number</label>
-                    <input type="tel" class="form-control" id="SellerPhone" placeholder="Phone Number">    
+                    <label for="SellerPhone">Seller Phone Number</label>
+                    <input type="tel" class="form-control" id="SellerPhone" placeholder="Phone Number" runat ="server">    
                   </div>
                    <div class="mb-3">
-                    <label for="exampleInputEmail1">Seller Address</label>
-                    <input type="text" class="form-control" id="SellerAddress" placeholder="Address">    
+                    <label for="SellerAddress">Seller Address</label>
+                    <input type="text" class="form-control" id="SellerAddress" placeholder="Address" runat ="server">    
                   </div>
                 <%--</form>--%>
                 <div>
-                    <asp:Button Text="  Edit  " Class="btn btn-danger" runat="server" />
-                    <asp:Button Text="  Save  " Class="btn btn-danger" runat="server" />
-                    <asp:Button Text=" Delete " Class="btn btn-danger" runat="server" />
+                    <label id="ErrMsg" runat ="server" class="text-danger"></label><br />
+                    <asp:Button Text="  Edit  " Class="btn btn-danger" runat="server" id="EditBtn"/>
+                    <asp:Button Text="  Save  " Class="btn btn-danger" runat="server" id="SaveBtn" OnClick="SaveBtn_Click"/>
+                    <asp:Button Text=" Delete " Class="btn btn-danger" runat="server" id="DeleteBtn"/>
                 </div>
             </div>
             
             <div class="col-md-8">
-                <%--Table Here--%>
+                <asp:GridView runat ="server" class ="table table-hover" ID="SellerGrVi" >
+
+                </asp:GridView>
             </div>
         </div>
 </asp:Content>
