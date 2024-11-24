@@ -15,49 +15,49 @@ namespace BookShop.View.Admin
     {
 
         /// <summary>
-        /// SellerName control.
+        /// SellerNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText SellerName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText SellerNameTB;
 
         /// <summary>
-        /// SellerEmail control.
+        /// SellerEmailTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl SellerEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl SellerEmailTB;
 
         /// <summary>
-        /// SellerPassword control.
+        /// SellerPasswordTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword SellerPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword SellerPasswordTB;
 
         /// <summary>
-        /// SellerPhone control.
+        /// SellerPhoneTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl SellerPhone;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl SellerPhoneTB;
 
         /// <summary>
-        /// SellerAddress control.
+        /// SellerAddressTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText SellerAddress;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText SellerAddressTB;
 
         /// <summary>
         /// ErrMsg control.

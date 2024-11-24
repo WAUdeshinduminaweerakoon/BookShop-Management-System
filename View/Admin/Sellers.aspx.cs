@@ -33,17 +33,17 @@ namespace BookShop.View.Admin
         {
             try
             {
-                if(SellerPassword.Value == "" || SellerEmail.Value == "" || SellerName.Value == "" || SellerPhone.Value == "" || SellerAddress.Value == "")
+                if(SellerPasswordTB.Value == "" || SellerEmailTB.Value == "" || SellerNameTB.Value == "" || SellerPhoneTB.Value == "" || SellerAddressTB.Value == "")
                 {
                     ErrMsg.InnerText = "Missing Data";
                 }
                 else
                 {
-                    string SelName     = SellerName.Value;
-                    string SelEmail    = SellerEmail.Value;
-                    string SelPassword = SellerPassword.Value;
-                    string SelPhone    = SellerPhone.Value;
-                    string SelAddress  = SellerAddress.Value;
+                    string SelName     = SellerNameTB.Value;
+                    string SelEmail    = SellerEmailTB.Value;
+                    string SelPassword = SellerPasswordTB.Value;
+                    string SelPhone    = SellerPhoneTB.Value;
+                    string SelAddress  = SellerAddressTB.Value;
 
                     string Query = "insert into SellerTable values('{0}','{1}','{2}','{3}','{4}')";
                     Query = string.Format(Query, SelName, SelEmail, SelPassword, SelPhone, SelAddress);
@@ -59,5 +59,88 @@ namespace BookShop.View.Admin
             }
 
         }
+        int Key = 0;
+        protected void SellerGrVi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SellerNameTB.Value = SellerGrVi.SelectedRow.Cells[2].Text;
+            SellerEmailTB.Value = SellerGrVi.SelectedRow.Cells[3].Text;
+            SellerPasswordTB.Value = SellerGrVi.SelectedRow.Cells[4].Text;
+            SellerPhoneTB.Value = SellerGrVi.SelectedRow.Cells[5].Text;
+            SellerAddressTB.Value = SellerGrVi.SelectedRow.Cells[6].Text;
+
+            if(SellerNameTB.Value == "")
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(SellerGrVi.SelectedRow.Cells[1].Text);
+            }
+
+        }
+
+        protected void EditBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (SellerPasswordTB.Value == "" || SellerEmailTB.Value == "" || SellerNameTB.Value == "" || SellerPhoneTB.Value == "" || SellerAddressTB.Value == "")
+                {
+                    ErrMsg.InnerText = "Missing Data";
+                }
+                else
+                {
+                    string SelName = SellerNameTB.Value;
+                    string SelEmail = SellerEmailTB.Value;
+                    string SelPassword = SellerPasswordTB.Value;
+                    string SelPhone = SellerPhoneTB.Value;
+                    string SelAddress = SellerAddressTB.Value;
+
+                    string Query = "update SellerTable set SellerName ='{0}',SellerEmail='{1}',SellerPassword='{2}',SellerPhone='{3}',SellerAddress='{4}' where SellerId='{5}'";
+                    Query = string.Format(Query, SelName, SelEmail, SelPassword, SelPhone, SelAddress, SellerGrVi.SelectedRow.Cells[1].Text);
+                    Con.SetData(Query);
+                    ShowSellers();
+                    ErrMsg.InnerText = "Seller Updated!!!";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                ErrMsg.InnerText = Ex.Message;
+            }
+
+        }
+
+        protected void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (SellerPasswordTB.Value == "" )
+                {
+                    ErrMsg.InnerText = "Missing Data";
+                }
+                else
+                {
+                    string SelName = SellerNameTB.Value;
+                    string SelEmail = SellerEmailTB.Value;
+                    string SelPassword = SellerPasswordTB.Value;
+                    string SelPhone = SellerPhoneTB.Value;
+                    string SelAddress = SellerAddressTB.Value;
+
+                    string Query = "delete from SellerTable  where SellerId={0}";
+                    Query = string.Format(Query, SellerGrVi.SelectedRow.Cells[1].Text);
+                    Con.SetData(Query);
+                    ShowSellers();
+                    ErrMsg.InnerText = "Seller Deleted!!!";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                ErrMsg.InnerText = Ex.Message;
+            }
+
+        }
+
+    
     }
 }
