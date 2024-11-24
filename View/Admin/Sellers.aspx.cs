@@ -49,7 +49,7 @@ namespace BookShop.View.Admin
                     Query = string.Format(Query, SelName, SelEmail, SelPassword, SelPhone, SelAddress);
                     Con.SetData(Query);
                     ShowSellers();
-                    ErrMsg.InnerText = "Seller Added!!!";
+                    ErrMsg.InnerText = "Seller Added!";
                 }
                 
             }
